@@ -13,3 +13,36 @@
  *= require_tree .
  *= require_self
  */
+
+body > div:first-child {
+  margin: 20px auto;
+  max-width: 768px;
+}
+
+
+header {
+  margin-bottom: 30px;
+}
+
+h1, nav {
+  display: inline-block;
+}
+
+nav {
+  width: 620px;
+}
+
+nav ul {
+  padding: 0;
+  text-align: right;
+}
+
+nav li {
+  display: inline;
+  margin: 0 4%;
+}
+
+main > div {
+  display: inline-block;
+  margin: 0 8%;
+}
