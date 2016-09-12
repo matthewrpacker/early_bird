@@ -30,10 +30,12 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'figaro'
 gem 'faraday'
+gem 'twilio-ruby'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -43,7 +45,6 @@ group :development do
 end
 
 group :test do
-  gem 'rspec-rails'
   gem 'capybara'
   gem 'launchy'
   gem 'shoulda-matchers'
