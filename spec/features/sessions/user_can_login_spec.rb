@@ -7,7 +7,9 @@ RSpec.feature 'User can log in' do
 
     visit '/'
 
-    click_on "Log in with Google"
+    within("header nav ul li:nth-child(3)") do
+      click_on "Log in with Google"
+    end
 
     expect(current_path).to eq(root_path)
 

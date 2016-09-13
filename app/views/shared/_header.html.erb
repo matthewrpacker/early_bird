@@ -1,0 +1,16 @@
+<header>
+  <h1>EarlyBird</h1>
+  <nav>
+    <ul>
+      <li>Tee Times</li>
+      <li>Courses</li>
+      <% if current_user %>
+      <li><%= link_to "Settings", settings_path %></li>
+      <li>Hello, <strong><%= current_user.name %></strong>!</li>
+      <li><%= link_to "Log out", logout_path, id: "sign_out" %></li>
+      <% else %>
+      <li><%= link_to "Log in with Google", "/auth/google_oauth2", id: "log_in" %></li>
+      <% end %>
+    </ul>
+  </nav>
+</header>

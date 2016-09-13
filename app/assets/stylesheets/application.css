@@ -46,3 +46,13 @@ main > div {
   display: inline-block;
   margin: 0 8%;
 }
+
+.settings > main > div {
+  display: inline-block;
+  margin: 0 5%;
+}
+
+/*body {
+  background-image: url('https://hd.unsplash.com/photo-1470883086119-f9dda6fdb990');
+  background-size: 100%;
+}*/
