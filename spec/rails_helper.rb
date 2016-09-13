@@ -64,3 +64,23 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 end
+
+def setup_for_oauth
+  Capybara.app = EarlyBird::Application
+  stub_omniauth
+end
+
+def stub_omniauth
+  OmniAuth.config.test_mode = true
+  OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({
+    provider: 'google_oauth2',
+    uid: "1234",
+    info: {
+      name: "Matt"
+    },
+    credentials: {
+      token: "token",
+      expires_at: 1473723535
+    }
+  })
+end
