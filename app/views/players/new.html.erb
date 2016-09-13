@@ -1,0 +1,15 @@
+<body>
+  <h1>Add a Player</h1>
+  <br>
+  <div>
+    <%= form_for [@user, @player] do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br>
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
+    <br>
+    <%= f.submit "Submit" %>
+    <% end %>
+  </div>
+</body>

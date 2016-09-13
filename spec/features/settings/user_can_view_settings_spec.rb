@@ -16,7 +16,7 @@ RSpec.feature 'User can view dashboard' do
     expect(current_path).to eq(settings_path)
     expect(page).to have_content("Manage Account")
     expect(page).to have_content("#{current_user.name}")
-    expect(page).to have_content("Players")
+    expect(page).to have_content("Manage Players")
     expect(page).to have_content("View Orders")
   end
 end

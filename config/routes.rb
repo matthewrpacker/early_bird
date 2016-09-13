@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   resources :sessions, only: [:create, :destroy]
   resource :home, only: [:show]
   resources :settings, only: [:index]
-
+  resources :players, only: [:new, :create]
   root to: "home#show"
 end
