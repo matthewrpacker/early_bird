@@ -1,0 +1,59 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
+
+body {
+  background-image: url(/assets/golf.jpg);
+  background-size: 100%;
+}
+ .top-margin {
+     padding-top: 15px;
+ }
+
+ #tee-times {
+   margin-right: 20px
+ }
+
+.link-color {
+  color: blue
+}
+
+.slogan {
+    margin-left: 90px;
+}
+
+.row.settings {
+    margin-left: 115px;
+}
+
+.well {
+  background-color: rgba(245, 245, 245, 0.5);
+  margin: 30px;
+  max-width: auto;
+  padding: auto;
+}
+
+.player-form {
+  margin-left: 400px
+}
+
+#player-header {
+  margin-right: 110px
+}
+
+.margin-top-player {
+  margin-top: 10px
+}
