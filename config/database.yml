@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: early_bird_production
-  username: early_bird
-  password: <%= ENV['EARLY_BIRD_DATABASE_PASSWORD'] %>
+  # username: early_bird
+  # password: <%= ENV['EARLY_BIRD_DATABASE_PASSWORD'] %>
