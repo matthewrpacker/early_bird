@@ -14,7 +14,50 @@
  *= require_self
  */
 
-body > div:first-child {
+body {
+  background-image: url(/assets/golf.jpg);
+  background-size: 100%;
+}
+ .top-margin {
+     padding-top: 15px;
+ }
+
+ #tee-times {
+   margin-right: 20px
+ }
+
+.link-color {
+  color: blue
+}
+
+.slogan {
+    margin-left: 90px;
+}
+
+.row.settings {
+    margin-left: 115px;
+}
+
+.well {
+  background-color: rgba(245, 245, 245, 0.5);
+  margin: 30px;
+  max-width: auto;
+  padding: auto;
+}
+
+.player-form {
+  margin-left: 400px
+}
+
+#player-header {
+  margin-right: 110px
+}
+
+.margin-top-player {
+  margin-top: 10px
+}
+
+/*body > div:first-child {
   margin: 20px auto;
   max-width: 768px;
 }
@@ -50,7 +93,7 @@ main > div {
 .settings > main > div {
   display: inline-block;
   margin: 0 5%;
-}
+}*/
 
 /*body {
   background-image: url('https://hd.unsplash.com/photo-1470883086119-f9dda6fdb990');

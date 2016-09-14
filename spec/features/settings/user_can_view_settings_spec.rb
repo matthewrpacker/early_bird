@@ -7,10 +7,7 @@ RSpec.feature 'User can view dashboard' do
 
     visit '/'
 
-    within("header nav ul li:nth-child(3)") do
-      click_on "Log in with Google"
-    end
-
+    click_on "Log in with Google"
     click_on "Settings"
 
     expect(current_path).to eq(settings_path)

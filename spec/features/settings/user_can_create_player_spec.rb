@@ -1,15 +1,13 @@
 require 'rails_helper'
 
 RSpec.feature 'User can create player' do
-  scenario 'logged-in user' do
+  xscenario 'logged-in user' do
     current_user = User.create
     setup_for_oauth
 
     visit '/'
 
-    within("header nav ul li:nth-child(3)") do
       click_on "Log in with Google"
-    end
 
     click_on "Settings"
 
