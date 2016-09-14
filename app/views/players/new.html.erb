@@ -1,0 +1,17 @@
+<div class='container-fluid'>
+  <div class="row settings text-center">
+    <h1 id='player-header'>Add a Player</h1>
+    <div class="well col-md-3 player-form">
+      <%= form_for [@user, @player] do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <br>
+      <%= f.label :phone %>
+      <%= f.text_field :phone %>
+      <br>
+      <%= f.submit "Submit", class: "btn btn-primary btn-sm pull-right margin-top-player" %>
+      <% end %>
+      <%= link_to "Cancel", settings_path, class: "btn btn-warning btn-sm pull-left margin-top-player" %>
+    </div>
+  </div>
+</div>

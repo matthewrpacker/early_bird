@@ -1,0 +1,19 @@
+<div class='container-fluid'>
+  <div class="row settings text-center">
+    <div class="well col-md-3 col-md-offset-2">
+      <h3> <%= link_to "Manage Account", settings_path %></h3>
+      <p>................</p>
+    </div>
+    <div class="well col-md-3">
+      <h3><%= link_to 'Manage Players', new_player_path %></h3>
+      <p><%= link_to new_player_path do %>
+        <i class="glyphicon glyphicon-plus link-color"></i>
+        <% end %>
+      </p>
+    </div>
+    <div class="well col-md-3">
+      <h3><%= link_to 'View Orders', new_player_path %></h3>
+      <p>................</p>
+    </div>
+  </div>
+</div>

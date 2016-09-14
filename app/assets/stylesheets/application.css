@@ -14,35 +14,45 @@
  *= require_self
  */
 
-body > div:first-child {
-  margin: 20px auto;
-  max-width: 768px;
+body {
+  background-image: url(/assets/golf.jpg);
+  background-size: 100%;
+}
+ .top-margin {
+     padding-top: 15px;
+ }
+
+ #tee-times {
+   margin-right: 20px
+ }
+
+.link-color {
+  color: blue
 }
 
-
-header {
-  margin-bottom: 30px;
+.slogan {
+    margin-left: 90px;
 }
 
-h1, nav {
-  display: inline-block;
+.row.settings {
+    margin-left: 115px;
 }
 
-nav {
-  width: 613px;
+.well {
+  background-color: rgba(245, 245, 245, 0.5);
+  margin: 30px;
+  max-width: auto;
+  padding: auto;
 }
 
-nav ul {
-  padding: 0;
-  text-align: right;
+.player-form {
+  margin-left: 400px
 }
 
-nav li {
-  display: inline;
-  margin: 0 4%;
+#player-header {
+  margin-right: 110px
 }
 
-main > div {
-  display: inline-block;
-  margin: 0 8%;
+.margin-top-player {
+  margin-top: 10px
 }
