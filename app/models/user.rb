@@ -1,7 +1,8 @@
 class User < ApplicationRecord
   has_many :players
+  has_many :orders
   validates :provider, presence: true
-  validates :uid, presence: true, uniqueness: true
+  validates :uid, presence: true
   validates :name, presence: true
   validates :oauth_token, presence: true, uniqueness: true
   validates :oauth_expires_at, presence: true
