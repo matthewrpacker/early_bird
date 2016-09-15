@@ -1,0 +1,19 @@
+one:
+  id: 1
+  provider: Google
+  uid: '1'
+  name: 'Matt'
+  oauth_token: 'token1'
+  oauth_expires_at: '2012-03-25T09:54:09.000Z'
+  created_at: '2012-03-25T09:54:09.000Z'
+  updated_at: '2012-03-25T09:54:09.000Z'
+
+two:
+  id: 2
+  provider: Yahoo
+  uid: '2'
+  name: 'Dave'
+  oauth_token: 'token2'
+  oauth_expires_at: '2011-03-25T09:54:09.000Z'
+  created_at: '2011-03-25T09:54:09.000Z'
+  updated_at: '2011-03-25T09:54:09.000Z'

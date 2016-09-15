@@ -3,11 +3,9 @@
     <h1 id='player-header'>Add a Player</h1>
     <div class="well col-md-3 player-form">
       <%= form_for [@user, @player] do |f| %>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, placeholder: "Name" %>
       <br>
-      <%= f.label :phone %>
-      <%= f.text_field :phone %>
+      <%= f.text_field :phone, placeholder: "Phone Number" %>
       <br>
       <%= f.submit "Submit", class: "btn btn-primary btn-sm pull-right margin-top-player" %>
       <% end %>
