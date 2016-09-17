@@ -19,6 +19,12 @@ class TeeTime
     end.reverse
   end
 
+  # def self.find_by_course_and_date(id, date: date)
+  #   service.tee_times_by_course_id_with_date(id, date).map do |tee_time|
+  #     new(tee_time)
+  #   end.reverse
+  # end
+
   # def self.find_by(date: date)
   #   service.tee_times_by_date(date).map do |tee_time|
   #     new(tee_time)

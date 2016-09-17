@@ -1,8 +1,8 @@
 <div class="page-content">
   <h1 class="courses"><strong>Courses</strong></h1>
-  <div>
+  <div class="course-list">
     <% @courses.each do |course| %>
-    <div class ="well col-md-3 text-center">
+    <div class ="well col-md-3 text-center course">
       <p><%= image_tag(course.image , alt: "#{course.name} pic", class: 'img-thumbnail course-image') %></p>
       <p><%= course.name %></p>
       <p><%= course.location %></p>

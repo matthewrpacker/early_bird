@@ -6,7 +6,6 @@ RSpec.feature 'User can see root path' do
 
     expect(current_path).to eq(root_path)
     expect(page).to have_content('EarlyBird')
-    expect(page).to have_content('Tee Times')
     expect(page).to have_content('Courses')
     expect(page).to have_content('Log in with Google')
     expect(page).to have_content('Find It')

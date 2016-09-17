@@ -1,11 +1,11 @@
 <div class="page-content">
-  <h1 class="course"><strong>Course Name</strong></h1>
+  <h1 class="courses"><strong><%= @course.name %></strong></h1>
   <div>
     <div class ="well col-md-3 text-center">
-      <p><%= image_tag(@course.image , alt: "#{@course.name} pic", class: 'img-thumbnail course-image') %></p>
-      <p><%= @course.name %></p>
+      <p><%= image_tag(@course.image , alt: "#{@course.name} pic", class: 'img-thumbnail course-image-show') %></p>
       <p><%= @course.location %></p>
-      <p><%= link_to "View Tee Times", tee_times_path(@course.id) %></p>
+      <p><%= link_to "Tee Times", tee_times_path(@course.id), class: 'btn btn-primary btn-sm pull-right' %></p>
+      <%= link_to "Back", courses_path, class: 'btn btn-danger btn-sm pull-left' %>
     </div>
   </div>
 </div>
