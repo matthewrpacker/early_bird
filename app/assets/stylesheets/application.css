@@ -18,24 +18,24 @@ body {
   background-image: url(/assets/golf.jpg);
   background-size: 100%;
 }
- .top-margin {
-     padding-top: 15px;
- }
+.top-margin {
+  padding-top: 15px;
+}
 
- #tee-times {
-   margin-right: 20px
- }
+#tee-times {
+  margin-right: 20px
+}
 
 .link-color {
   color: blue
 }
 
 .slogan {
-    margin-left: 90px;
+  margin-left: 90px;
 }
 
 .row.settings {
-    margin-left: 115px;
+  margin-left: 115px;
 }
 
 .well {
