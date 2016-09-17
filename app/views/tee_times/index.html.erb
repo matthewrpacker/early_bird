@@ -1,18 +1,24 @@
 <div id="tee_time_list">
-  <div class="well col-md-6">
-    <div class="table-responsive col-md-8 fit-width">
+  <div class="well col-md-8">
+    <div class="table-responsive col-md-12 fit-width">
       <table class="table">
-        <thead>
+        <thead class="table-head">
           <tr>
-            <th>Time Date</th>
+            <th>Time</th>
+            <th>Date</th>
+            <th>Available</th>
             <th>Unit Price</th>
+            <th>Purchase</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="table-body">
           <% @tee_times.each do |tee_time| %>
           <tr>
-            <td><%= tee_time.tee_off_at %></td>
-            <td><%= tee_time.unit_price %></td>
+            <td><%= tee_time.time %></td>
+            <td><%= tee_time.date %></td>
+            <td><%= tee_time.quantity %></td>
+            <td>$<%= tee_time.unit_price %></td>
+            <td><%= link_to 'Book', courses_path, class: 'btn btn-primary btn-sm' %></td>
           </tr>
           <% end %>
         </tbody>
