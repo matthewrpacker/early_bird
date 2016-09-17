@@ -22,10 +22,10 @@ RSpec.feature 'User can create player' do
     fill_in "Name", with: "Golfer 1"
     fill_in "Phone Number", with: "+13032222222"
 
-    # click_on "Submit"
-    #
-    # expect(current_path).to eq(settings_path)
-    # expect(page).to have_content("Golfer 1")
-    # expect(page).to have_content("+13032222222")
+    click_on "Submit"
+
+    expect(current_path).to eq(settings_path)
+    expect(page).to have_content("Golfer 1")
+    expect(page).to have_content("+13032222222")
   end
 end

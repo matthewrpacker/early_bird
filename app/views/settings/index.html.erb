@@ -6,8 +6,15 @@
     </div>
     <div class="well col-md-3">
       <h3><%= link_to 'Manage Players', new_player_path %></h3>
-      <p><%= link_to new_player_path do %>
+      <p>
+        <%= link_to new_player_path do %>
         <i class="glyphicon glyphicon-plus link-color"></i>
+        <% end %>
+      </p>
+      <p>
+        <% @players.each do |player| %>
+        <%= player.name %>
+        <%= player.phone %>
         <% end %>
       </p>
     </div>
