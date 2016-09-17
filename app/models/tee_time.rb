@@ -1,5 +1,5 @@
 class TeeTime
-  attr_reader :tee_off_at, :unit_price, :course_id, :booked, :quantity
+  attr_reader :date, :unit_price, :course_id, :booked, :quantity, :time
 
   def initialize(tee_time_attributes)
     @tee_off_at = tee_time_attributes['tee_off_at']
@@ -11,6 +11,25 @@ class TeeTime
 
   def self.service
     BirdService.new
+  end
+
+  def date
+    tee_off_at = @tee_off_at
+    date = DateTime.parse(tee_off_at)
+    formatted_date = date.strftime('%a %b %d')
+  end
+
+  def time
+    time = DateTime.parse(@tee_off_at)
+    formatted_time = time.strftime('%l:%M %p')
+  end
+
+  def unit_price
+    convert_to_dollars(@unit_price)
+  end
+
+  def convert_to_dollars(amount)
+    '%.2f' % (amount.to_i)
   end
 
   def self.find_by_course(id)
