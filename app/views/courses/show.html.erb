@@ -2,13 +2,10 @@
   <h1 class="course"><strong>Course Name</strong></h1>
   <div>
     <div class ="well col-md-3 text-center">
-      <p>Course Image</p>
-      <p>Course Name</p>
-      <p>Course Location</p>
-      <h1>
-        <%= @course_tee_times.first.unit_price %>
-        <%= @courses.first.name %>
-      </h1>
+      <p><%= image_tag(@course.image , alt: "#{@course.name} pic", class: 'img-thumbnail course-image') %></p>
+      <p><%= @course.name %></p>
+      <p><%= @course.location %></p>
+      <p><%= link_to "View Tee Times", tee_times_path(@course.id) %></p>
     </div>
   </div>
 </div>

@@ -1,4 +1,4 @@
-class CourseTeeTimes
+class TeeTime
   attr_reader :tee_off_at, :unit_price, :course_id, :booked, :quantity
 
   def initialize(tee_time_attributes)
@@ -13,9 +13,21 @@ class CourseTeeTimes
     BirdService.new
   end
 
-  def self.course_tee_times(id)
-    service.course_tee_times(id).map do |tee_time|
+  def self.find(id)
+    service.tee_times_by_course_id(id).map do |tee_time|
       new(tee_time)
     end
   end
+
+  # def self.find_by(date: date)
+  #   service.tee_times_by_date(date).map do |tee_time|
+  #     new(tee_time)
+  #   end
+  # end
+  #
+  # def self.find_by(coures_id: course_id, date: date)
+  #   service.tee_times_by_course_id_with_date(course_id, date).map do |tee_time|
+  #     new(tee_time)
+  #   end
+  # end
 end

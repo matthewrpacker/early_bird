@@ -1,14 +1,12 @@
 class CoursesController < ApplicationController
   def index
     # Use each method in view
-    @courses = CourseInfo.courses
+    @courses = Course.all
   end
 
   def show
-    # Use with each method in view
-    @course = index.find(params[:id])
-
-    @course_tee_times = CourseTeeTimes.course_tee_times(1)
+    @course = Course.find(params[:id])
+    # @tee_times = TeeTime.find_by(course_id: params[:id])
   end
 end
 

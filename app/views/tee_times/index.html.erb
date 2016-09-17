@@ -4,14 +4,18 @@
       <table class="table">
         <thead>
           <tr>
-            <th>Time</th>
-            <th>Course</th>
-            <th>Location</th>
-            <th>Date</th>
+            <th>Time Date</th>
             <th>Unit Price</th>
-            <th>Book</th>
           </tr>
         </thead>
+        <tbody>
+          <% @tee_times.each do |tee_time| %>
+          <tr>
+            <td><%= tee_time.tee_off_at %></td>
+            <td><%= tee_time.unit_price %></td>
+          </tr>
+          <% end %>
+        </tbody>
       </table>
     </div>
   </div>
