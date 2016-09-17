@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :settings, only: [:index]
   resources :players, only: [:new, :create]
   resources :courses, only: [:index, :show]
-  resources :tee_times, only: [:index]
+  get 'courses/:id/tee_times', to: 'tee_times#index', as: 'tee_times'
   resources :orders, only: [:index, :show]
   root to: "home#show"
 end

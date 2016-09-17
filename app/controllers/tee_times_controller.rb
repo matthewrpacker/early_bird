@@ -1,6 +1,6 @@
 class TeeTimesController < ApplicationController
   def index
-    @tee_times = TeeTime.find(params[:id])
+    @tee_times = TeeTime.find_by_course(params[:id])
   end
 end
 

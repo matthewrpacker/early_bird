@@ -13,10 +13,10 @@ class TeeTime
     BirdService.new
   end
 
-  def self.find(id)
+  def self.find_by_course(id)
     service.tee_times_by_course_id(id).map do |tee_time|
       new(tee_time)
-    end
+    end.reverse
   end
 
   # def self.find_by(date: date)
