@@ -1,7 +1,8 @@
 class TeeTime
-  attr_reader :date, :unit_price, :course_id, :booked, :quantity, :time
+  attr_reader :id, :unit_price, :course_id, :booked, :quantity, :time, :date
 
   def initialize(tee_time_attributes)
+    @id = tee_time_attributes['id']
     @tee_off_at = tee_time_attributes['tee_off_at']
     @unit_price = tee_time_attributes['unit_price']
     @course_id = tee_time_attributes['course_id']
@@ -36,6 +37,10 @@ class TeeTime
     service.tee_times_by_course_id(id).map do |tee_time|
       new(tee_time)
     end.reverse
+  end
+
+  def self.find_by_course_tee_time(course_id, id)
+    new(service.tee_time_by_course_id_and_tee_time_id(course_id, id))
   end
 
   # def self.find_by_course_and_date(id, date: date)

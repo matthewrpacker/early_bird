@@ -2,7 +2,7 @@
   <div class="well col-md-8">
     <div class="table-responsive col-md-12 fit-width">
       <table class="table">
-        <h2><%= @course.name %> </h2>
+        <h2><%= @course.name %></h2>
         <thead class="table-head">
           <tr>
             <th>Time</th>
@@ -13,15 +13,13 @@
           </tr>
         </thead>
         <tbody class="table-body">
-          <% @tee_times.each do |tee_time| %>
           <tr>
-            <td><%= tee_time.time %></td>
-            <td><%= tee_time.date %></td>
-            <td><%= tee_time.quantity %></td>
-            <td>$<%= tee_time.unit_price %></td>
-            <td><%= link_to 'Book', tee_time_path(tee_time.course_id, tee_time.id), class: 'btn btn-primary btn-sm' %></td>
+            <td><%= @tee_time.time %></td>
+            <td><%= @tee_time.date %></td>
+            <td><%= @tee_time.quantity %></td>
+            <td>$<%= @tee_time.unit_price %></td>
+            <td><%= link_to 'Book', tee_times_path, class: 'btn btn-primary btn-sm' %></td>
           </tr>
-          <% end %>
         </tbody>
       </table>
     </div>
