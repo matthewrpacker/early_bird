@@ -22,6 +22,16 @@ class BirdService
     JSON.parse(response.body)
   end
 
+  def tee_time_by_course_id_and_tee_time_id(course_id, id)
+    response = @conn.get "courses/#{course_id}/tee_times/#{id}.json"
+    JSON.parse(response.body)
+  end
+
+
+
+
+
+
   def tee_times_by_course_id_with_date(id, date: date)
     response = @conn.get "courses/#{id}/tee_times.json", {tee_off_at: date}
     JSON.parse(response.body)
