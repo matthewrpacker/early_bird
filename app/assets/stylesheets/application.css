@@ -66,3 +66,7 @@ body {
   height: 200px;
   width: auto;
 }
+
+.title {
+  margin-top: -10px;
+}

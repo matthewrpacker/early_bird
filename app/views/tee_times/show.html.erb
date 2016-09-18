@@ -2,14 +2,18 @@
   <div class="well col-md-8">
     <div class="table-responsive col-md-12 fit-width">
       <table class="table">
-        <h2><%= @course.name %></h2>
+        <h2><%= link_to @course.name, course_path(@course.id), style: "color: blue" %></h2>
+        <%= @course.street %>
+        <%= @course.location %><br>
+        <%= @course.phone %>
         <thead class="table-head">
           <tr>
             <th>Time</th>
             <th>Date</th>
-            <th>Available</th>
+            <th>Players</th>
             <th>Unit Price</th>
             <th>Purchase</th>
+            <th></th>
           </tr>
         </thead>
         <tbody class="table-body">
@@ -18,7 +22,8 @@
             <td><%= @tee_time.date %></td>
             <td><%= @tee_time.quantity %></td>
             <td>$<%= @tee_time.unit_price %></td>
-            <td><%= link_to 'Book', tee_times_path, class: 'btn btn-primary btn-sm' %></td>
+            <td><%= link_to 'Confirm Booking', tee_times_path, class: 'btn btn-primary btn-sm' %></td>
+            <td><%= link_to 'Cancel', tee_times_path(@course.id), class: 'btn btn-danger btn-sm' %></td>
           </tr>
         </tbody>
       </table>

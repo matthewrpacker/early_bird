@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'User can view new player form' do
+RSpec.feature 'User can use back button on course show page' do
   scenario 'logged-in user' do
     setup_for_oauth
 

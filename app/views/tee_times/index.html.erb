@@ -2,7 +2,10 @@
   <div class="well col-md-8">
     <div class="table-responsive col-md-12 fit-width">
       <table class="table">
-        <h2><%= @course.name %> </h2>
+        <h2><%= link_to @course.name, course_path(@course.id), style: "color: blue" %></h2>
+        <%= @course.street %>
+        <%= @course.location %><br>
+        <%= @course.phone %>
         <thead class="table-head">
           <tr>
             <th>Time</th>
@@ -15,7 +18,7 @@
         <tbody class="table-body">
           <% @tee_times.each do |tee_time| %>
           <tr>
-            <td><%= tee_time.time %></td>
+            <td><%= link_to tee_time.time, tee_time_path(tee_time.course_id, tee_time.id), style: "color: blue" %></td>
             <td><%= tee_time.date %></td>
             <td><%= tee_time.quantity %></td>
             <td>$<%= tee_time.unit_price %></td>
