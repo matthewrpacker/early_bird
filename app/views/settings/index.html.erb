@@ -1,16 +1,15 @@
 <div class='container-fluid'>
   <div class="row settings text-center">
     <div class="well col-md-3 col-md-offset-2">
-      <h3> <%= link_to "Manage Account", settings_path %></h3>
+      <h3> <%= link_to "Manage Account", settings_path, style: "color: blue" %></h3>
       <p>................</p>
     </div>
     <div class="well col-md-3">
-      <h3><%= link_to 'Manage Players', new_player_path %></h3>
-      <p>
-        <%= link_to new_player_path do %>
-        <i class="glyphicon glyphicon-plus link-color"></i>
-        <% end %>
-      </p>
+      <h3><%= link_to 'View Orders', orders_path, style: "color: blue" %></h3>
+      <p>................</p>
+    </div>
+    <div class="well col-md-3">
+      <h3><%= link_to 'Add Player', new_player_path, style: "color: blue" %></h3>
       <p>
         <% @players.each do |player| %>
         <%= player.name %>
@@ -18,9 +17,10 @@
         <% end %>
       </p>
     </div>
-    <div class="well col-md-3">
-      <h3><%= link_to 'View Orders', orders_path %></h3>
-      <p>................</p>
-    </div>
   </div>
 </div>
+
+
+<%#= link_to new_player_path do %>
+<!-- <i class="glyphicon glyphicon-plus link-color"></i> -->
+<%# end %>

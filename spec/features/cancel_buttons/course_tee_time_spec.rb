@@ -17,7 +17,7 @@ RSpec.feature 'From course tee time show' do
 
       expect(current_path).to eq('/courses/1/tee_times/2')
 
-      within('.table-body tr td:nth-child(6)') do
+      within('.table-body tr') do
         click_on 'Cancel'
       end
 
@@ -39,9 +39,7 @@ RSpec.feature 'From course tee time show' do
 
       expect(current_path).to eq('/courses/1/tee_times/2')
 
-      within('.table h2') do
-        click_on 'Overland Park'
-      end
+      click_on 'Overland Park'
 
       expect(current_path).to eq('/courses/1')
     end

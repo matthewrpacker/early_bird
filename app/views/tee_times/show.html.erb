@@ -1,32 +1,78 @@
 <div id="tee_time_list">
-  <div class="well col-md-8">
-    <div class="table-responsive col-md-12 fit-width">
-      <table class="table">
-        <h2><%= link_to @course.name, course_path(@course.id), style: "color: blue" %></h2>
-        <%= @course.street %>
-        <%= @course.location %><br>
-        <%= @course.phone %>
-        <thead class="table-head">
-          <tr>
-            <th>Time</th>
-            <th>Date</th>
-            <th>Players</th>
-            <th>Unit Price</th>
-            <th>Purchase</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody class="table-body">
-          <tr>
-            <td><%= @tee_time.time %></td>
-            <td><%= @tee_time.date %></td>
-            <td><%= @tee_time.quantity %></td>
-            <td>$<%= @tee_time.unit_price %></td>
-            <td><%= link_to 'Confirm Booking', tee_times_path, class: 'btn btn-primary btn-sm' %></td>
-            <td><%= link_to 'Cancel', tee_times_path(@course.id), class: 'btn btn-danger btn-sm' %></td>
-          </tr>
-        </tbody>
-      </table>
+  <div class="row">
+    <div class="well col-md-7">
+      <div class="table-responsive col-md-10 fit-width">
+        <table class="table">
+          <h2><%= link_to @course.name, course_path(@course.id), style: "color: blue" %></h2>
+          <%= @course.street %>
+          <%= @course.location %><br>
+          <%= @course.phone %>
+          <thead class="table-head">
+            <tr>
+              <th>Time</th>
+              <th>Date</th>
+              <th>Players</th>
+              <th>Unit Price</th>
+              <th>Total</th>
+              <th>Purchase</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody class="table-body">
+            <tr>
+              <td><%= @tee_time.time %></td>
+              <td><%= @tee_time.date %></td>
+              <td>
+                <select class="form-control">
+                  <option>4</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                </select>
+              </td>
+              <td>$<%= @tee_time.unit_price %></td>
+              <td>$<%= @tee_time.unit_price %></td>
+              <td><%= link_to 'Confirm Booking', tee_times_path, class: 'btn btn-primary btn-sm' %></td>
+              <td><%= link_to 'Cancel', tee_times_path(@course.id), class: 'btn btn-danger btn-sm' %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="well col-md-3">
+      <div class="table-responsive col-md-12 fit-width">
+        <table class="table">
+          <h2>Send text</h2>
+          <h4>Select players / Enter numbers</h4>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Phone</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td> My Name </td>
+              <td> My phone number </td>
+            </tr>
+            <tr>
+              <td>
+                <select class="form-control-player">
+                  <option>Matthew</option>
+                  <option>Peter</option>
+                  <option>Jonathan</option>
+                  <option>Adam</option>
+                  <option>Perry</option>
+                  <option>Ryan</option>
+                  <option>David</option>
+                  <option>Andrew</option>
+                  <option>Bill</option>
+                </select>
+              </td>
+            </tr><br>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>

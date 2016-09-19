@@ -70,3 +70,8 @@ body {
 .title {
   margin-top: -10px;
 }
+
+.form-control {
+  width: 90%;
+  height: 21px;
+}
