@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'User can view new player form' do
+RSpec.feature 'User can use cancel button on new player form' do
   scenario 'logged-in user' do
     setup_for_oauth
 
@@ -10,7 +10,7 @@ RSpec.feature 'User can view new player form' do
 
     visit settings_path
 
-    click_on "Manage Players"
+    click_on "Add Player"
 
     expect(current_path).to eq(new_player_path)
 

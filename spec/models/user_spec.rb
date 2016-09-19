@@ -7,4 +7,6 @@ RSpec.describe User, type: :model do
   it { should validate_presence_of :oauth_token }
   it { should validate_uniqueness_of :oauth_token }
   it { should validate_presence_of :oauth_expires_at }
+  it { should have_many :players }
+  it { should have_many :orders }
 end

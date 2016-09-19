@@ -11,11 +11,9 @@ RSpec.feature 'User can create player' do
 
     click_on "Settings"
 
-    expect(page).to have_content("Players")
-
     expect(current_path).to eq(settings_path)
 
-    click_on "Manage Players"
+    click_on "Add Player"
 
     expect(current_path).to eq(new_player_path)
 

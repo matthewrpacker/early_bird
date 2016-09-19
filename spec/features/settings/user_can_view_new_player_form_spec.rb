@@ -9,7 +9,7 @@ RSpec.feature 'User can view new player form' do
     click_on "Log in with Google"
 
     click_on "Settings"
-    click_on "Manage Players"
+    click_on "Add Player"
 
     expect(current_path).to eq(new_player_path)
     expect(page).to have_content("Add a Player")

@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   resources :courses, only: [:index, :show]
   get 'courses/:id/tee_times', to: 'tee_times#index', as: 'tee_times'
   get 'courses/:course_id/tee_times/:id', to: 'tee_times#show', as: 'tee_time'
-  resources :orders, only: [:index, :show]
+  resources :orders, only: [:index, :show, :create]
   root to: "home#show"
 end
