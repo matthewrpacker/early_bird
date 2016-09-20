@@ -8,17 +8,17 @@ RSpec.feature 'User can view all tee times for specific course' do
 
     click_on "Log in with Google"
 
-    visit 'courses/1'
+    visit 'courses/12'
 
     within('.course') do
       click_on "Tee Times"
     end
 
-    expect(current_path).to eq('/courses/1/tee_times')
-    expect(page).to have_link('Overland Park')
-    expect(page).to have_content('1801 S. Huron St.')
-    expect(page).to have_content('Denver, CO')
-    expect(page).to have_content('720-865-0430')
+    expect(current_path).to eq('/courses/12/tee_times')
+    expect(page).to have_link('Spring Hill')
+    expect(page).to have_content('800 N. Telluride St.')
+    expect(page).to have_content('Aurora, CO')
+    expect(page).to have_content('303-739-6854')
 
     within('.table-head') do
       expect(page).to have_content("Time")

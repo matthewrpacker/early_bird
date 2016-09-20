@@ -1,5 +1,5 @@
 class TeeTime
-  attr_reader :id, :unit_price, :course_id, :booked, :quantity, :time, :date
+  attr_reader :id, :unit_price, :course_id, :booked, :quantity, :time, :date, :total_price, :tee_off_at
 
   def initialize(tee_time_attributes)
     @id = tee_time_attributes['id']
@@ -33,6 +33,10 @@ class TeeTime
     '%.2f' % (amount.to_i)
   end
 
+  def total_price
+    convert_to_dollars(@unit_price.to_i*@quantity.to_i)
+  end
+
   def self.find_by_course(id)
     service.tee_times_by_course_id(id).map do |tee_time|
       new(tee_time)
@@ -41,6 +45,10 @@ class TeeTime
 
   def self.find_by_course_tee_time(course_id, id)
     new(service.tee_time_by_course_id_and_tee_time_id(course_id, id))
+  end
+
+  def self.update_quantity(course_id, id, quantity)
+    service.update_tee_time_quantity(course_id, id, quantity)
   end
 
   # def self.find_by_course_and_date(id, date: date)

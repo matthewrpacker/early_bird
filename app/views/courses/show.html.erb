@@ -8,6 +8,6 @@
     <main class="pull-left"><%= @course.phone %></main>
     <p><%= image_tag(@course.image , alt: "#{@course.name} pic", class: 'img-thumbnail course-image-show') %></p>
     <p><%= link_to "Tee Times", tee_times_path(@course.id), class: 'btn btn-primary btn-sm pull-right' %></p>
-    <%= link_to "Back", courses_path, class: 'btn btn-danger btn-sm pull-left' %>
+    <%= link_to "Back", request.referrer, class: 'btn btn-danger btn-sm pull-left' %>
   </div>
 </div>

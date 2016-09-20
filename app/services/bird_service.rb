@@ -27,18 +27,17 @@ class BirdService
     JSON.parse(response.body)
   end
 
-
-
-
-
-
-  def tee_times_by_course_id_with_date(id, date: date)
-    response = @conn.get "courses/#{id}/tee_times.json", {tee_off_at: date}
-    JSON.parse(response.body)
-  end
-
-  def tee_times_by_date(date: date)
-    response = @conn.get "courses/#{id}/tee_times.json", {tee_off_at: date}
-    JSON.parse(response.body)
+  def update_tee_time_quantity(course_id, id, quantity)
+    @conn.patch "courses/#{course_id}/tee_times/#{id}.json?quantity=#{quantity}"
   end
 end
+
+# def tee_times_by_course_id_with_date(id, date: date)
+#   response = @conn.get "courses/#{id}/tee_times.json", {tee_off_at: date}
+#   JSON.parse(response.body)
+# end
+#
+# def tee_times_by_date(date: date)
+#   response = @conn.get "courses/#{id}/tee_times.json", {tee_off_at: date}
+#   JSON.parse(response.body)
+# end

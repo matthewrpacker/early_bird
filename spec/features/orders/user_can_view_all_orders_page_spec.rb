@@ -15,8 +15,9 @@ RSpec.feature 'User can view all orders' do
     expect(page).to have_content("Order History")
     expect(page).to have_content("Order Number")
     expect(page).to have_content("Date Placed")
-    expect(page).to have_content("Players")
-    expect(page).to have_content("Total")
-    expect(page).to have_link("Order Details")
+    expect(page).to have_content("Course Name")
+    expect(page).to have_content("Tee Off At")
+    expect(page).to have_content("Quantity")
+    expect(page).to have_content("Unit Price")
   end
 end
