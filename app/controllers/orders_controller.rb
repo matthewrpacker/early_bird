@@ -1,13 +1,6 @@
 class OrdersController < ApplicationController
   def index
     @orders = Order.all.order(:tee_off_at)
-
-    # - And I should see my most recent order
-    # order by id descending
-  end
-
-  def show
-    @order = Order.find(params[:id])
   end
 
   def create
