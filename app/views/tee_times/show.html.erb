@@ -2,6 +2,9 @@
   <div class="row">
     <div class="well col-md-7">
       <div class="table-responsive col-md-10 fit-width">
+        <%= form_tag("/orders") do %>
+        <%= hidden_field_tag(:id, @tee_time.id) %>
+        <%= hidden_field_tag(:course_id, @tee_time.course_id) %>
         <table class="table">
           <h2><%= link_to @course.name, course_path(@course.id), style: "color: blue" %></h2>
           <%= @course.street %>
@@ -22,21 +25,16 @@
             <tr>
               <td><%= @tee_time.time %></td>
               <td><%= @tee_time.date %></td>
-              <td>
-                <select class="form-control">
-                  <option>4</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                </select>
+              <td id="quantity">
+                <%= select_tag(:quantity, options_for_select([4, 1, 2, 3])) %>
               </td>
               <td>$<%= @tee_time.unit_price %></td>
-              <td>$<%= @tee_time.unit_price %></td>
-              <td><%= link_to 'Confirm Booking', tee_times_path, class: 'btn btn-primary btn-sm' %></td>
-              <td><%= link_to 'Cancel', tee_times_path(@course.id), class: 'btn btn-danger btn-sm' %></td>
+              <td id="total-price">$<%= @tee_time.total_price %></td>
+              <td><%= button_to 'Confirm Booking', orders_path, class: 'btn btn-primary btn-sm' %></td>
             </tr>
           </tbody>
         </table>
+        <% end %>
       </div>
     </div>
     <div class="well col-md-3">
@@ -76,3 +74,10 @@
     </div>
   </div>
 </div>
+
+<script>
+$( "#quantity" ).change(function() {
+  alert( "Handler for .change() called." );
+  $( "td#total-price" ).text();
+});
+</script>

@@ -1,18 +1,33 @@
 <div>
   <h1 class="courses"><strong>Order History</strong></h1>
-  <div class="well col-md-7 table-responsive">
+  <div class="well col-md-8 table-responsive">
     <table class="table">
       <thead>
-        <td>Order Number</td>
         <tr>
+          <th>Order Number</th>
           <th>Date Placed</th>
-          <th>Players</th>
-          <th>Total</th>
+          <th>Course Name</th>
+          <th>Time</th>
+          <th>Date</th>
+          <th class='text-center'>Quantity</th>
+          <th>Unit Price</th>
+          <th>Total Price</th>
         </tr>
-        <td>
-          <%= link_to "Order Details", orders_path, class:'btn btn-primary' %>
-        </td>
       </thead>
+      <tbody class="table-body">
+        <% @orders.each do |order| %>
+        <tr>
+          <td>#<%= order.id %></td>
+          <td><%= order.date(order.created_at) %></td>
+          <td><%= link_to order.course_name, course_path(order.course_id) %></td>
+          <td><%= order.time(order.tee_off_at) %></td>
+          <td><%= order.date(order.tee_off_at) %></td>
+          <td class='text-center'><%= order.quantity %></td>
+          <td>$<%= order.format_price(order.unit_price) %></td>
+          <td>$<%= order.format_price(order.unit_price*order.quantity) %></td>
+        </tr>
+        <% end %>
+      </tbody>
     </table>
   </div>
 </div>
