@@ -70,17 +70,4 @@ describe BirdService do
       end
     end
   end
-
-  context "#update_tee_time_quantity(course_id, id, quantity)" do
-    it "updates tee time quantity for specific course and specific tee time" do
-      VCR.use_cassette("bird_service_info") do
-        earlybird = BirdService.new
-        tee_time = earlybird.tee_time_by_course_id_and_tee_time_id(1, 120)
-
-        earlybird.update_tee_time_quantity(1, 120, 2)
-
-        expect(tee_time['quantity']).to eq(2)
-      end
-    end
-  end
 end
