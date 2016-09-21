@@ -16,6 +16,7 @@
           </tr>
         </thead>
         <tbody class="table-body">
+          <% @tee_times = @tee_times.sort_by {|obj| obj.tee_off_at} %>
           <% @tee_times.each do |tee_time| %>
           <tr>
             <td><%= link_to tee_time.time, tee_time_path(tee_time.course_id, tee_time.id), style: "color: blue" %></td>

@@ -29,7 +29,7 @@
                 <%= select_tag(:quantity, options_for_select([4, 1, 2, 3])) %>
               </td>
               <td>$<%= @tee_time.unit_price %></td>
-              <td>$<%= @tee_time.total_price %></td>
+              <td id="total_price">$<%= @tee_time.total_price(@tee_time) %></td>
               <td><%= button_to 'Confirm Booking', orders_path, class: 'btn btn-primary btn-sm' %></td>
             </tr>
           </tbody>
@@ -50,8 +50,8 @@
           </thead>
           <tbody>
             <tr>
-              <td> My Name </td>
-              <td> My phone number </td>
+              <td><%= current_user.name %></td>
+              <td><%= current_user.formatted_phone %></td>
             </tr>
             <tr>
               <td>
@@ -69,9 +69,9 @@
   </div>
 </div>
 
-<!-- <script>
-$( "#quantity" ).change(function() {
-alert( "Handler for .change() called." );
-$( "td#total-price" ).text();
+<script>
+$("#quantity").change(function() {
+  var newTotalPrice = $("#quantity").val() * <%= @tee_time.unit_price %>
+  $("#total_price").text('$'+newTotalPrice.toFixed(2));
 });
-</script> -->
+</script>

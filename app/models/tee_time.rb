@@ -33,8 +33,8 @@ class TeeTime
     '%.2f' % (amount.to_i)
   end
 
-  def total_price
-    convert_to_dollars(@unit_price.to_i*@quantity.to_i)
+  def total_price(tee_time)
+    convert_to_dollars(tee_time.unit_price.to_i*tee_time.quantity.to_i)
   end
 
   def self.find_by_course(id)

@@ -41,15 +41,15 @@ describe BirdService do
     it "returns parsed tee time info for specific course" do
       VCR.use_cassette("bird_service_info") do
         earlybird = BirdService.new
-        willis_case_tee_times = earlybird.tee_times_by_course_id(3)
-        first_tee_time = willis_case_tee_times.first
+        murphy_creek_tee_times = earlybird.tee_times_by_course_id(9)
+        first_tee_time = murphy_creek_tee_times.last
 
-        expect(willis_case_tee_times.class).to eq(Array)
-        expect(willis_case_tee_times.count).to eq(1830)
+        expect(murphy_creek_tee_times.class).to eq(Array)
+        expect(murphy_creek_tee_times.count).to eq(1830)
         expect(first_tee_time.class).to eq(Hash)
-        expect(first_tee_time['tee_off_at']).to eq('2016-11-30T17:00:00.000Z')
+        expect(first_tee_time['tee_off_at']).to eq('2016-11-01T07:00:00.000Z')
         expect(first_tee_time['unit_price']).to eq('27.0')
-        expect(first_tee_time['course_id']).to eq(3)
+        expect(first_tee_time['course_id']).to eq(9)
         expect(first_tee_time['quantity']).to eq(4)
       end
     end
