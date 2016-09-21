@@ -7,7 +7,6 @@ class PlayersController < ApplicationController
     @player = current_user.players.new(player_params)
 
     if @player.save
-      flash[:notice] = "Player Created!"
       redirect_to settings_path
     else
       render :new
