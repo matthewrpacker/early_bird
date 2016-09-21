@@ -39,7 +39,6 @@ RSpec.feature 'User can view specific tee time for specific courses' do
       expect(page).to have_content("4")
       expect(page).to have_content("$27.00")
       expect(page).to have_button("Confirm Booking")
-      # expect(page).to have_link("Cancel")
     end
   end
 end

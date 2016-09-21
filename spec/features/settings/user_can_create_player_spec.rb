@@ -8,7 +8,6 @@ RSpec.feature 'User can create player' do
 
 
     click_on "Log in with Google"
-
     click_on "Settings"
 
     expect(current_path).to eq(settings_path)

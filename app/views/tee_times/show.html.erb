@@ -25,11 +25,11 @@
             <tr>
               <td><%= @tee_time.time %></td>
               <td><%= @tee_time.date %></td>
-              <td id="quantity">
+              <td>
                 <%= select_tag(:quantity, options_for_select([4, 1, 2, 3])) %>
               </td>
               <td>$<%= @tee_time.unit_price %></td>
-              <td id="total-price">$<%= @tee_time.total_price %></td>
+              <td>$<%= @tee_time.total_price %></td>
               <td><%= button_to 'Confirm Booking', orders_path, class: 'btn btn-primary btn-sm' %></td>
             </tr>
           </tbody>
@@ -75,9 +75,9 @@
   </div>
 </div>
 
-<script>
+<!-- <script>
 $( "#quantity" ).change(function() {
-  alert( "Handler for .change() called." );
-  $( "td#total-price" ).text();
+alert( "Handler for .change() called." );
+$( "td#total-price" ).text();
 });
-</script>
+</script> -->

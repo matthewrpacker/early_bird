@@ -7,7 +7,6 @@ RSpec.feature 'User can view all courses' do
     visit '/'
 
     click_on "Log in with Google"
-
     click_on "Courses"
 
     expect(current_path).to eq(courses_path)

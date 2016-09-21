@@ -14,5 +14,4 @@ class Order < ApplicationRecord
   def format_price(price)
     '%.2f' % (price.to_i)
   end
-
 end

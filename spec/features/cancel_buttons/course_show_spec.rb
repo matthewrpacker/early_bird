@@ -7,7 +7,6 @@ RSpec.feature 'User can use back button on course show page' do
     visit '/'
 
     click_on 'Log in with Google'
-
     click_on 'Courses'
 
     expect(current_path).to eq(courses_path)

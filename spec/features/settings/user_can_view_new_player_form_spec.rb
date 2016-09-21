@@ -7,7 +7,6 @@ RSpec.feature 'User can view new player form' do
     visit '/'
 
     click_on "Log in with Google"
-
     click_on "Settings"
     click_on "Add Player"
 
