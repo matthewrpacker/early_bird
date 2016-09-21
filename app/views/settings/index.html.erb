@@ -7,13 +7,27 @@
       <h3><%= link_to 'View Orders', orders_path, style: "color: blue" %></h3>
     </div>
     <div class="well col-md-3">
+      <table class="player-table">
       <h3><%= link_to 'Add Player', new_player_path, style: "color: blue" %></h3>
-      <p>
-        <% @players.each do |player| %>
-        <%= player.name %>
-        <%= player.phone %>
-        <% end %>
-      </p>
+        <thead>
+          <tr class="player-tr">
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Edit</th>
+            <th>Remove</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @players.each do |player| %>
+          <tr class="player-tr">
+            <td class='text-left'><%= player.name %></td>
+            <td><%= player.format_phone_for_view(player.phone) %></td>
+            <td><%= link_to "Edit", edit_player_path(player), class: "btn btn-warning btn-xs" %></td>
+            <td><%= button_to "Delete", player_path(player), class: "btn btn-danger btn-xs", method: :delete %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>

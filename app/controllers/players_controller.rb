@@ -13,6 +13,25 @@ class PlayersController < ApplicationController
     end
   end
 
+  def edit
+    @player = Player.find(params[:id])
+  end
+
+  def update
+    @player = Player.find(params[:id])
+
+    if @player.update_attributes(player_params)
+      redirect_to settings_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @player = Player.find(params[:id]).delete
+    redirect_to settings_path
+  end
+
   private
 
   def player_params

@@ -56,15 +56,9 @@
             <tr>
               <td>
                 <select class="form-control-player">
-                  <option>Matthew</option>
-                  <option>Peter</option>
-                  <option>Jonathan</option>
-                  <option>Adam</option>
-                  <option>Perry</option>
-                  <option>Ryan</option>
-                  <option>David</option>
-                  <option>Andrew</option>
-                  <option>Bill</option>
+                  <% @players.each do |player| %>
+                  <option> <%= player.name %></option>
+                  <% end %>
                 </select>
               </td>
             </tr><br>
