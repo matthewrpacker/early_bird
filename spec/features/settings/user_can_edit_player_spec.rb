@@ -11,13 +11,13 @@ RSpec.feature 'User can edit player' do
     click_on "Add Player"
 
     fill_in "Name", with: "Golfer 1"
-    fill_in "Phone Number", with: "+13032222222"
+    fill_in "Phone Number", with: "3032222222"
 
     click_on "Submit"
 
     expect(current_path).to eq(settings_path)
     expect(page).to have_content("Golfer 1")
-    expect(page).to have_content("+13032222222")
+    expect(page).to have_content("303-222-2222")
     expect(page).to have_link('Edit')
 
     click_on 'Edit'
@@ -30,14 +30,14 @@ RSpec.feature 'User can edit player' do
     expect(page).to have_link("Cancel")
 
     fill_in "Name", with: "Edited Name"
-    fill_in "Phone Number", with: "+12223334444"
+    fill_in "Phone Number", with: "2223334444"
 
     click_on 'Submit'
 
     expect(current_path).to eq(settings_path)
     expect(page).to have_content("Edited Name")
-    expect(page).to have_content("+12223334444")
+    expect(page).to have_content("222-333-4444")
     expect(page).to_not have_content("Golfer 1")
-    expect(page).to_not have_content("+13032222222")
+    expect(page).to_not have_content("303-222-2222")
   end
 end
