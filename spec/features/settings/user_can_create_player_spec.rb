@@ -1,28 +1,57 @@
 require 'rails_helper'
 
 RSpec.feature 'User can create player' do
-  scenario 'logged-in user' do
-    setup_for_oauth
+  context 'logged-in user' do
+    scenario 'with proper information' do
+      setup_for_oauth
 
-    visit '/'
+      visit '/'
 
 
-    click_on "Log in with Google"
-    click_on "Settings"
+      click_on "Log in with Google"
+      click_on "Settings"
 
-    expect(current_path).to eq(settings_path)
+      expect(current_path).to eq(settings_path)
 
-    click_on "Add Player"
+      click_on "Add Player"
 
-    expect(current_path).to eq(new_player_path)
+      expect(current_path).to eq(new_player_path)
 
-    fill_in "Name", with: "Golfer 1"
-    fill_in "Phone Number", with: "3032222222"
+      fill_in "Name", with: "Golfer 1"
+      fill_in "Phone Number", with: "3032222222"
 
-    click_on "Submit"
+      click_on "Submit"
 
-    expect(current_path).to eq(settings_path)
-    expect(page).to have_content("Golfer 1")
-    expect(page).to have_content("303-222-2222")
+      expect(current_path).to eq(settings_path)
+      expect(page).to have_content("Golfer 1")
+      expect(page).to have_content("303-222-2222")
+    end
+
+    scenario 'without proper information' do
+      setup_for_oauth
+
+      visit '/'
+
+
+      click_on "Log in with Google"
+      click_on "Settings"
+
+      expect(current_path).to eq(settings_path)
+
+      click_on "Add Player"
+
+      expect(current_path).to eq(new_player_path)
+
+      fill_in "Name", with: "Golfer 1"
+      fill_in "Phone Number", with: nil
+
+      click_on "Submit"
+
+      expect(page).to have_content("Add a Player")
+      expect(page).to have_field('Name')
+      expect(page).to have_field('Phone Number')
+      expect(page).to have_button("Submit")
+      expect(page).to have_link("Cancel")
+    end
   end
 end

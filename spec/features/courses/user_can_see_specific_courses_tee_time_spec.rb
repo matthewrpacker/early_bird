@@ -1,12 +1,14 @@
 require 'rails_helper'
 
 RSpec.feature 'User can view specific tee time for specific courses' do
-  xscenario 'logged-in user' do
+  scenario 'logged-in user' do
     setup_for_oauth
 
     visit '/'
 
     click_on "Log in with Google"
+    
+    create_three_players
 
     visit '/courses/5/tee_times'
 
