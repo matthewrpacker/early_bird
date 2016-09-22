@@ -1,24 +1,65 @@
-# README
+# EarlyBird
+EarlyBird is my final personal project for Module 3 at Turing School of Software and Design.  Students were required to create a successful web application from a project idea, authenticate with a third-party service, consume an api, and solve an actual problem.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Learning Goals
+- Learning how to build a full Rails app from idea to delivery.
+- Revisiting previous concepts such as APIs and OAuth.
+- Finding the strengths and gaps in your knowledge of Ruby, Rails, and organizing a project.
 
-Things you may want to cover:
+### Details
+EarlyBird is a golf tee time booking system. All course information (tee times, images, addresses, etc.) displayed on the EarlyBird app is consumed from my Golf Courses API.
 
-* Ruby version
+### Project Links
+[EarlyBird Github URL](https://github.com/dtinianow/rails_engine)
 
-* System dependencies
+[EarlyBird Heroku URL](https://early-bird-golf.herokuapp.com/)
 
-* Configuration
+[Golf Courses API Github URL](https://github.com/dtinianow/rails_engine)
+[Golf Courses API Heroku URL](https://early-bird-golf.herokuapp.com)
 
-* Database creation
+[Personal Project Spec](https://github.com/turingschool/lesson_plans/blob/master/ruby_03-professional_rails_applications/self_directed_project.md)
 
-* Database initialization
+### Setup
 
-* How to run the test suite
+Ruby version
+- Built on Ruby 2.3.1p112
 
-* Services (job queues, cache servers, search engines, etc.)
+Rails version
+- Built on Rails 5.0.0.1
 
-* Deployment instructions
+Database
+- Built on Postgresql
 
-* ...
+Test suite dependencies
+- RSpec
+- Capybara
+- VCR
+
+OAuth
+- Google
+
+SMS
+- Twilio
+
+Configuration
+
+- From the command line:
+
+- `$ git clone git@github.com:matthewrpacker/early_bird.git`
+
+- `$ cd early_bird/`
+
+- `$ bundle`
+
+- `$ rake db:{create,migrate}`
+
+- `$ rails s`
+
+
+How to run the test suite
+
+All specs:
+- `$ rspec`
+
+Specific spec:
+- `$ rspec spec/subdirectory_name/file_name`
