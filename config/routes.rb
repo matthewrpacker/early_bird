@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :settings, only: [:index]
   resources :players, only: [:new, :create, :edit, :update, :destroy]
   resources :courses, only: [:index, :show]
+  resources :users, only: [:edit, :update]
 
   get 'courses/:id/tee_times', to: 'tee_times#index', as: 'tee_times'
   get 'courses/:course_id/tee_times/:id', to: 'tee_times#show', as: 'tee_time'

@@ -1,27 +1,43 @@
 <div class='container-fluid'>
   <div class="row settings text-center">
     <div class="well col-md-3 col-md-offset-2">
-      <h3> <%= link_to "Manage Account", settings_path, style: "color: blue" %></h3>
+      <table class="user-table">
+        <h3> <%= link_to "My Number", edit_user_path(current_user), style: "color: blue" %></h3>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Phone</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="text-left"><%= current_user.name %></td>
+            <td class="text-left"><%= current_user.formatted_phone %></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
     <div class="well col-md-3">
       <h3><%= link_to 'View Orders', orders_path, style: "color: blue" %></h3>
     </div>
     <div class="well col-md-3">
       <table class="player-table">
-      <h3><%= link_to 'Add Player', new_player_path, style: "color: blue" %></h3>
+        <h3><%= link_to 'Add Player', new_player_path, style: "color: blue" %></h3>
         <thead>
+          <% if @players.present? %>
           <tr class="player-tr">
             <th>Name</th>
             <th>Phone</th>
             <th>Edit</th>
             <th>Remove</th>
           </tr>
+          <% end %>
         </thead>
         <tbody>
           <% @players.each do |player| %>
           <tr class="player-tr">
             <td class='text-left'><%= player.name %></td>
-            <td><%= player.format_phone_for_view(player.phone) %></td>
+            <td><%= player.formatted_phone %></td>
             <td><%= link_to "Edit", edit_player_path(player), class: "btn btn-warning btn-xs" %></td>
             <td><%= button_to "Delete", player_path(player), class: "btn btn-danger btn-xs", method: :delete %></td>
           </tr>

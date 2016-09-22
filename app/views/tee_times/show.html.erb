@@ -1,8 +1,8 @@
 <div id="tee_time_list">
+  <%= form_tag("/orders") do %>
   <div class="row">
     <div class="well col-md-7">
       <div class="table-responsive col-md-10 fit-width">
-        <%= form_tag("/orders") do %>
         <%= hidden_field_tag(:id, @tee_time.id) %>
         <%= hidden_field_tag(:course_id, @tee_time.course_id) %>
         <table class="table">
@@ -26,15 +26,14 @@
               <td><%= @tee_time.time %></td>
               <td><%= @tee_time.date %></td>
               <td>
-                <%= select_tag(:quantity, options_for_select([4, 1, 2, 3])) %>
+                <%= select_tag(:quantity, options_for_select([4, 3, 2, 1])) %>
               </td>
               <td>$<%= @tee_time.unit_price %></td>
-              <td>$<%= @tee_time.total_price %></td>
+              <td id="total_price">$<%= @tee_time.total_price(@tee_time) %></td>
               <td><%= button_to 'Confirm Booking', orders_path, class: 'btn btn-primary btn-sm' %></td>
             </tr>
           </tbody>
         </table>
-        <% end %>
       </div>
     </div>
     <div class="well col-md-3">
@@ -48,30 +47,68 @@
               <th>Phone</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="players">
             <tr>
-              <td> My Name </td>
-              <td> My phone number </td>
+              <td><%= current_user.name %></td>
+              <td><%= current_user.formatted_phone %></td>
+            </tr>
+            <% player_options = @players.map { |p| [p.name, p.id] } %>
+            <tr>
+              <td>
+                <%= select_tag(:player_1_id, options_for_select(player_options)) %>
+              </td>
+              <td>
+                <%= @players[0].formatted_phone %>
+              </td>
             </tr>
             <tr>
               <td>
-                <select class="form-control-player">
-                  <% @players.each do |player| %>
-                  <option> <%= player.name %></option>
-                  <% end %>
-                </select>
+                <%= select_tag(:player_2_id, options_for_select(player_options, @players[1].id)) %>
               </td>
-            </tr><br>
+              <td>
+                <%= @players[1].formatted_phone %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <%= select_tag(:player_3_id, options_for_select(player_options, @players[2].id)) %>
+              </td>
+              <td>
+                <%= @players[2].formatted_phone %>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
     </div>
   </div>
+  <% end %>
 </div>
 
-<!-- <script>
-$( "#quantity" ).change(function() {
-alert( "Handler for .change() called." );
-$( "td#total-price" ).text();
+<script>
+$(document).ready(function () {
+  $("#quantity").change(function () {
+    var newTotalPrice = $("#quantity").val() * <%= @tee_time.unit_price %>
+    $("#total_price").text('$'+newTotalPrice.toFixed(2))
+    updatePlayers()
+  });
+
+  function updatePlayers() {
+    var quantity = $("#quantity").val()
+    var playerRows = $("#players > tr")
+    if (quantity == 4) {
+      playerRows.css("display", "")
+    } else if (quantity == 3) {
+      playerRows.css("display", "")
+      playerRows.last().css("display", "none")
+    } else if (quantity == 2) {
+      playerRows.css("display", "")
+      playerRows.last().prev().css("display", "none")
+      playerRows.last().css("display", "none")
+    } else if (quantity == 1) {
+      playerRows.css("display", "none")
+      playerRows.first().css("display", "")
+    }
+  }
 });
-</script> -->
+</script>

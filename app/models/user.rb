@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  include Utils
   has_many :players
   has_many :orders
   validates :provider, presence: true

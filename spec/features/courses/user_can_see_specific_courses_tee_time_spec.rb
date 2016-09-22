@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature 'User can view specific tee time for specific courses' do
-  scenario 'logged-in user' do
+  xscenario 'logged-in user' do
     setup_for_oauth
 
     visit '/'
