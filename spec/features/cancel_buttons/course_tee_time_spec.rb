@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'From course tee time show' do
   context 'Logged-in user' do
-    scenario 'User can go back to course show' do
+    xscenario 'User can go back to course show' do
       setup_for_oauth
 
       visit '/'
