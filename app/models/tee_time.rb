@@ -50,22 +50,4 @@ class TeeTime
   def self.update_quantity(course_id, id, quantity)
     service.update_tee_time_quantity(course_id, id, quantity)
   end
-
-  # def self.find_by_course_and_date(id, date: date)
-  #   service.tee_times_by_course_id_with_date(id, date).map do |tee_time|
-  #     new(tee_time)
-  #   end.reverse
-  # end
-
-  # def self.find_by(date: date)
-  #   service.tee_times_by_date(date).map do |tee_time|
-  #     new(tee_time)
-  #   end
-  # end
-  #
-  # def self.find_by(coures_id: course_id, date: date)
-  #   service.tee_times_by_course_id_with_date(course_id, date).map do |tee_time|
-  #     new(tee_time)
-  #   end
-  # end
 end

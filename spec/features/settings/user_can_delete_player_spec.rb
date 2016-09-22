@@ -19,7 +19,9 @@ RSpec.feature 'User can delete player' do
     expect(page).to have_content("Golfer 1")
     expect(page).to have_content("303-222-2222")
     expect(page).to have_button('Delete')
+
     click_on 'Delete'
+
     expect(page).to_not have_content("Golfer 1")
     expect(page).to_not have_content("303-222-2222")
   end

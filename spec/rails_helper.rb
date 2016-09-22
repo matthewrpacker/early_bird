@@ -84,3 +84,46 @@ def stub_omniauth
     }
   })
 end
+
+def create_order
+  Order.create(
+    id: 1,
+    user_id: 1,
+    created_at: "2016-09-21 21:56:55",
+    updated_at: "2016-09-21 21:56:55",
+    course_name: "Saddle Rock",
+    course_id: 8,
+    tee_off_at: "2016-11-30 15:40:00",
+    quantity: 1,
+    unit_price: 27
+  )
+end
+
+def create_three_players
+  user = User.last
+  user.players.create(
+  id: 1,
+  name: "Jon",
+  phone: "3004476645",
+  user_id: 1,
+  created_at: "2016-09-21 21:35:40",
+  updated_at: "2016-09-21 23:12:40"
+  )
+  user.players.create(
+  id: 2,
+  name: "Matt",
+  phone: "3003376645",
+  user_id: 1,
+  created_at: "2016-09-21 21:35:35",
+  updated_at: "2016-09-21 23:12:10"
+  )
+  user.players.create(
+  id: 3,
+  name: "Perry",
+  phone: "3005576645",
+  user_id: 1,
+  created_at: "2016-09-21 21:35:50",
+  updated_at: "2016-09-21 23:12:50"
+  )
+
+end
