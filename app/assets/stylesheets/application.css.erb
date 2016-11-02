@@ -19,6 +19,7 @@ body {
   background-size: 100%;
   background-attachment: fixed;
 }
+
 .top-margin {
   padding-top: 15px;
 }
@@ -85,4 +86,65 @@ body {
 }
 
 .player-body > td {
+}
+
+.phone {
+  padding-bottom: 10px
+}
+
+.table {
+  margin-left: -6px
+}
+
+@media only screen and (min-width: 481px) {
+  .mobile-date, .mobile {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  body {
+    background: lightsteelblue;
+    background-repeat: no-repeat fixed;
+  }
+
+  html {
+    height: 100%;
+  }
+
+  .mobile-well {
+    margin-left: 8px
+  }
+
+  .mobile-center {
+    text-align: center;
+  }
+
+  .mobile-main {
+    margin-left: -15px;
+  }
+
+  .hide-mobile, .web {
+    display: none;
+  }
+
+  .mobile-date {
+    margin-bottom: -3px;
+  }
+
+  .mobile-margin {
+    margin-left: -1px;
+  }
+
+  .mobile-header {
+    margin-left: 72px;
+  }
+
+  .mobile-book-wells {
+    margin-left: 16px;
+  }
+
+  #tee_time_list {
+    margin-left: 15px;
+  }
 }

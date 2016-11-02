@@ -1,13 +1,12 @@
 <div class="page-content">
-  <div class ="well col-md-4 text-center course">
+  <div class ="well col-md-4  col-xs-10 text-center course">
     <h1 class="pull-left"><strong><%= @course.name %></strong></h1><br><br><br><br>
     <main class="pull-left">
       <%= @course.street %>
       <%= @course.location %>
     </main><br>
-    <main class="pull-left"><%= @course.phone %></main>
+    <main class="pull-left phone"><%= @course.phone %></main>
     <p><%= image_tag(@course.image , alt: "#{@course.name} pic", class: 'img-thumbnail course-image-show') %></p>
-    <p><%= link_to "Tee Times", tee_times_path(@course.id), class: 'btn btn-primary btn-sm pull-right' %></p>
-    <%= link_to "Back", request.referrer, class: 'btn btn-danger btn-sm pull-left' %>
+    <p><%= link_to "Tee Times", tee_times_path(@course.id), class: 'btn btn-primary btn-md' %></p>
   </div>
 </div>

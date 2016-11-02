@@ -1,6 +1,6 @@
 <div id="tee_time_list">
-  <div class="well col-md-8">
-    <div class="table-responsive col-md-12 fit-width">
+  <div class="well col-md-8 col-xs-11 mobile-well">
+    <div class="col-md-12 fit-width mobile-main">
       <table class="table">
         <h2><%= link_to @course.name, course_path(@course.id), style: "color: blue" %></h2>
         <%= @course.street %>
@@ -20,10 +20,10 @@
           <% @tee_times.each do |tee_time| %>
           <tr>
             <td><%= link_to tee_time.time, tee_time_path(tee_time.course_id, tee_time.id), style: "color: blue" %></td>
-            <td><%= tee_time.date %></td>
-            <td><%= tee_time.quantity %></td>
+            <td class="mobile-center"><%= tee_time.date %></td>
+            <td class="mobile-center"><%= tee_time.quantity %></td>
             <td>$<%= tee_time.unit_price %></td>
-            <td><%= link_to 'Book', tee_time_path(tee_time.course_id, tee_time.id), class: 'btn btn-primary btn-sm' %></td>
+            <td class="mobile-center"><%= link_to 'Book', tee_time_path(tee_time.course_id, tee_time.id), class: 'btn btn-primary btn-sm' %></td>
           </tr>
           <% end %>
         </tbody>
