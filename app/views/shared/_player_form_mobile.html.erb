@@ -1,0 +1,10 @@
+<div class="well col-xs-10">
+  <%= form_for [@user, @player] do |f| %>
+  <%= f.text_field :name, placeholder: "Name" %>
+  <br><br>
+  <%= f.text_field :phone, placeholder: "Phone Number" %>
+  <br><br>
+  <%= f.submit "Submit", class: "btn btn-primary btn-sm pull-right margin-top-player" %>
+  <% end %>
+  <%= link_to "Cancel", settings_path, class: "btn btn-warning btn-sm pull-left margin-top-player" %>
+</div>
