@@ -34,12 +34,9 @@
       <thead>
         <tr>
           <th>#</th>
-          <!-- <th>Date Placed</th> -->
           <th>Course</th>
           <th>Time</th>
           <th>Date</th>
-          <!-- <th class='text-center'>Quant</th> -->
-          <!-- <th>Unit Price</th> -->
           <th>Total</th>
         </tr>
       </thead>
@@ -47,17 +44,13 @@
         <% @orders.each do |order| %>
         <tr>
           <td>#<%= order.id %></td>
-          <!-- <td><%= order.date(order.created_at) %></td> -->
           <td><%= link_to order.course_name, course_path(order.course_id) %></td>
           <td><%= order.time(order.tee_off_at) %></td>
           <td><%= order.date(order.tee_off_at)[0..-7] %></td>
-          <!-- <td class='text-center'><%= order.quantity %></td> -->
-          <!-- <td>$<%= order.format_price(order.unit_price) %></td> -->
           <td>$<%= order.format_price(order.unit_price*order.quantity) %></td>
         </tr>
         <% end %>
       </tbody>
     </table>
-
   </div>
 </div>

@@ -1,6 +1,7 @@
 <div class='container-fluid'>
   <div class="row settings text-center">
-    <div class="well col-md-3 col-md-offset-2">
+<!-- web -->
+    <div class="well col-md-3 col-md-offset-2 web">
       <table class="user-table">
         <h3> <%= link_to "My Number", edit_user_path(current_user), style: "color: blue" %></h3>
         <thead>
@@ -17,51 +18,110 @@
         </tbody>
       </table>
     </div>
-    <div class="well col-md-3">
-      <table>
-      <h3><%= link_to 'All Orders', orders_path, style: "color: blue" %></h3>
-      <h5>Upcoming Orders</h5>
-
-
-
-
-
-      <thead>
-        <% if @orders.present? %>
-        <tr class="player-tr">
-          <th>Course</th>
-          <th>Date</th>
-          <th>Time</th>
-        </tr>
-        <% else %>
-        <tr>
-          <th>You have no orders</th>
-        </tr>
-        <% end %>
-      </thead>
-      <tbody>
-        <% @orders.each do |order| %>
-        <tr class="text-left">
-          <td><%= order.course_name %></td>
-          <td><%= order.date(order.tee_off_at) %></td>
-          <td><%= order.time(order.tee_off_at) %></td>
-        </tr>
-        <% end %>
-      </tbody>
-
-
-
-
-
-
-
-
-
-
-
-    </table>
+<!-- mobile -->
+    <div class="well mobile settings-user-info">
+      <table class="user-table">
+        <h3> <%= link_to "My Number", edit_user_path(current_user), style: "color: blue" %></h3>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Phone</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="text-left"><%= current_user.name %></td>
+            <td class="text-left"><%= current_user.formatted_phone %></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <div class="well col-md-3">
+<!-- web -->
+    <div class="well col-md-3 web">
+      <h3><%= link_to 'All Orders', orders_path, style: "color: blue" %></h3>
+      <h5>Upcoming Tee Times</h5>
+      <table class="settings-orders-table">
+        <thead>
+          <% if @orders.present? %>
+          <tr class="player-tr">
+            <th>Course</th>
+            <th>Date</th>
+            <th>Time</th>
+          </tr>
+          <% else %>
+          <tr>
+            <th>You have no orders</th>
+          </tr>
+          <% end %>
+        </thead>
+        <tbody>
+          <% @orders.each do |order| %>
+          <tr class="text-left">
+            <td class="padding-right"><%= order.course_name %></td>
+            <td class="padding-right"><%= order.date(order.tee_off_at) %></td>
+            <td><%= order.time(order.tee_off_at) %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+<!-- mobile -->
+    <div class="well mobile settings-user-info">
+      <h3><%= link_to 'All Orders', orders_path, style: "color: blue" %></h3>
+      <h5>Upcoming Tee Times</h5>
+      <table class="settings-orders-table">
+        <thead>
+          <% if @orders.present? %>
+          <tr class="player-tr">
+            <th>Course</th>
+            <th>Date</th>
+            <th>Time</th>
+          </tr>
+          <% else %>
+          <tr>
+            <th>You have no orders</th>
+          </tr>
+          <% end %>
+        </thead>
+        <tbody>
+          <% @orders.each do |order| %>
+          <tr class="text-left">
+            <td class="padding-right"><%= order.course_name %></td>
+            <td class="padding-right"><%= order.date(order.tee_off_at) %></td>
+            <td><%= order.time(order.tee_off_at) %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+<!-- web -->
+    <div class="well col-md-3 web">
+      <table class="player-table">
+        <h3><%= link_to 'Add Player', new_player_path, style: "color: blue" %></h3>
+        <thead>
+          <% if @players.present? %>
+          <tr class="player-tr">
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Edit</th>
+            <th>Remove</th>
+          </tr>
+          <% end %>
+        </thead>
+        <tbody>
+          <% @players.each do |player| %>
+          <tr class="player-tr">
+            <td class='text-left'><%= player.name %></td>
+            <td><%= player.formatted_phone %></td>
+            <td><%= link_to "Edit", edit_player_path(player), class: "btn btn-warning btn-xs" %></td>
+            <td><%= button_to "Delete", player_path(player), class: "btn btn-danger btn-xs", method: :delete %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+<!-- mobile -->
+    <div class="well mobile settings-user-info">
       <table class="player-table">
         <h3><%= link_to 'Add Player', new_player_path, style: "color: blue" %></h3>
         <thead>

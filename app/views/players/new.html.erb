@@ -1,6 +1,12 @@
 <div class='container-fluid'>
-  <div class="row settings text-center">
+<!-- web -->
+  <div class="row settings text-center web">
     <h1 id='player-header'>Add a Player</h1>
-    <%= render '/shared/player_form' %>
+    <%= render '/shared/player_form_web' %>
+  </div>
+<!-- mobile -->
+  <div class="row text-center mobile">
+    <h1>Add a Player</h1>
+    <%= render '/shared/player_form_mobile' %>
   </div>
 </div>

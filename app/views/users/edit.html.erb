@@ -1,5 +1,6 @@
 <div class='container-fluid'>
-  <div class="row settings text-center">
+<!-- web -->
+  <div class="row settings text-center web">
     <h1 id='player-header'>My Number</h1>
     <div class="well col-md-3 player-form">
       <%= form_for @user do |f| %>
@@ -7,6 +8,20 @@
       <br>
       <%= f.text_field :phone, placeholder: "Phone Number" %>
       <br>
+      <%= f.submit "Submit", class: "btn btn-primary btn-sm pull-right margin-top-player" %>
+      <% end %>
+      <%= link_to "Cancel", settings_path, class: "btn btn-warning btn-sm pull-left margin-top-player" %>
+    </div>
+  </div>
+<!-- mobile -->
+  <div class="row text-center mobile user-edit">
+    <h1>My Number</h1>
+    <div class="well col-xs-10">
+      <%= form_for @user do |f| %>
+      <%= f.text_field :name, placeholder: "Name" %>
+      <br><br>
+      <%= f.text_field :phone, placeholder: "Phone Number" %>
+      <br><br>
       <%= f.submit "Submit", class: "btn btn-primary btn-sm pull-right margin-top-player" %>
       <% end %>
       <%= link_to "Cancel", settings_path, class: "btn btn-warning btn-sm pull-left margin-top-player" %>
