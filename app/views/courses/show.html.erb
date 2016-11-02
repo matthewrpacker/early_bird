@@ -7,6 +7,11 @@
     </main><br>
     <main class="pull-left phone"><%= @course.phone %></main>
     <p><%= image_tag(@course.image , alt: "#{@course.name} pic", class: 'img-thumbnail course-image-show') %></p>
-    <p><%= link_to "Tee Times", tee_times_path(@course.id), class: 'btn btn-primary btn-md' %></p>
+    <p class="web-tee-time-btn"><%= link_to "Tee Times", tee_times_path(@course.id), class: 'btn btn-primary btn-md' %></p>
+    <% if current_user %>
+    <p class="mobile-tee-time-btn"><%= link_to "Tee Times", tee_times_path(@course.id), class: 'btn btn-primary btn-md' %></p>
+    <% else %>
+    <p class="mobile-tee-time-btn"><%= link_to "Log in with Google to View Tee Times", "/auth/google_oauth2", class: 'btn btn-primary btn-md', id: "log_in" %></p>
+    <% end %>
   </div>
 </div>
