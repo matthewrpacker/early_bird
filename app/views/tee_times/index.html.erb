@@ -23,7 +23,11 @@
             <td class="mobile-center"><%= tee_time.date %></td>
             <td class="mobile-center"><%= tee_time.quantity %></td>
             <td>$<%= tee_time.unit_price %></td>
+            <% if current_user %>
             <td class="mobile-center"><%= link_to 'Book', tee_time_path(tee_time.course_id, tee_time.id), class: 'btn btn-primary btn-sm' %></td>
+            <% else %>
+            <td class="mobile-center"><%= link_to "Log in with Google to View Tee Times", "/auth/google_oauth2", class: 'btn btn-primary btn-sm', id: "log_in" %></td>
+            <% end %>
           </tr>
           <% end %>
         </tbody>
