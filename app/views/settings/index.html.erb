@@ -18,7 +18,48 @@
       </table>
     </div>
     <div class="well col-md-3">
-      <h3><%= link_to 'View Orders', orders_path, style: "color: blue" %></h3>
+      <table>
+      <h3><%= link_to 'All Orders', orders_path, style: "color: blue" %></h3>
+      <h5>Upcoming Orders</h5>
+
+
+
+
+
+      <thead>
+        <% if @orders.present? %>
+        <tr class="player-tr">
+          <th>Course</th>
+          <th>Date</th>
+          <th>Time</th>
+        </tr>
+        <% else %>
+        <tr>
+          <th>You have no orders</th>
+        </tr>
+        <% end %>
+      </thead>
+      <tbody>
+        <% @orders.each do |order| %>
+        <tr class="text-left">
+          <td><%= order.course_name %></td>
+          <td><%= order.date(order.tee_off_at) %></td>
+          <td><%= order.time(order.tee_off_at) %></td>
+        </tr>
+        <% end %>
+      </tbody>
+
+
+
+
+
+
+
+
+
+
+
+    </table>
     </div>
     <div class="well col-md-3">
       <table class="player-table">

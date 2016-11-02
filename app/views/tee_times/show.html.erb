@@ -1,8 +1,8 @@
 <div id="tee_time_list">
   <%= form_tag("/orders") do %>
   <div class="row">
-    <div class="well col-md-7">
-      <div class="table-responsive col-md-10 fit-width">
+    <div class="well col-md-7 mobile-book-wells">
+      <div class="table-responsive col-md-10">
         <%= hidden_field_tag(:id, @tee_time.id) %>
         <%= hidden_field_tag(:course_id, @tee_time.course_id) %>
         <table class="table">
@@ -10,12 +10,13 @@
           <%= @course.street %>
           <%= @course.location %><br>
           <%= @course.phone %>
+          <h4 class="mobile-date"> <%= @tee_time.date %> </h4>
           <thead class="table-head">
             <tr>
               <th>Time</th>
-              <th>Date</th>
+              <th class="hide-mobile">Date</th>
               <th>Players</th>
-              <th>Unit Price</th>
+              <th class="hide-mobile">Unit Price</th>
               <th>Total</th>
               <th>Purchase</th>
               <th></th>
@@ -24,19 +25,19 @@
           <tbody class="table-body">
             <tr>
               <td><%= @tee_time.time %></td>
-              <td><%= @tee_time.date %></td>
+              <td class="hide-mobile"><%= @tee_time.date %></td>
               <td>
                 <%= select_tag(:quantity, options_for_select([4, 3, 2, 1])) %>
               </td>
-              <td>$<%= @tee_time.unit_price %></td>
+              <td class="hide-mobile">$<%= @tee_time.unit_price %></td>
               <td id="total_price">$<%= @tee_time.total_price(@tee_time) %></td>
-              <td><%= button_to 'Confirm Booking', orders_path, class: 'btn btn-primary btn-sm' %></td>
+              <td><%= button_to 'Confirm', orders_path, class: 'btn btn-primary btn-sm' %></td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
-    <div class="well col-md-3">
+    <div class="well col-md-3 mobile-book-wells">
       <div class="table-responsive col-md-12 fit-width">
         <table class="table">
           <h2>Send text</h2>
