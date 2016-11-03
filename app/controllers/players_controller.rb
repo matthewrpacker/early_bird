@@ -14,11 +14,11 @@ class PlayersController < ApplicationController
   end
 
   def edit
-    @player = Player.find(params[:id])
+    @player = current_user.players.find(params[:id])
   end
 
   def update
-    @player = Player.find(params[:id])
+    @player = current_user.players.find(params[:id])
 
     if @player.update_attributes(player_params)
       redirect_to settings_path
@@ -28,7 +28,7 @@ class PlayersController < ApplicationController
   end
 
   def destroy
-    @player = Player.find(params[:id]).delete
+    @player = current_user.players.find(params[:id]).delete
     redirect_to settings_path
   end
 
