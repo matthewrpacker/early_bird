@@ -16,9 +16,7 @@ RSpec.feature 'User can add their own phone number' do
       expect(current_user.name).to eq('Matt')
       expect(current_user.phone).to eq('3334445555')
 
-      click_on 'My Number'
-
-      expect(current_path).to eq(edit_user_path(current_user))
+      visit edit_user_path(current_user)
 
       expect(page).to have_content("My Number")
       expect(page).to have_field('Name')
@@ -26,10 +24,12 @@ RSpec.feature 'User can add their own phone number' do
       expect(page).to have_button("Submit")
       expect(page).to have_link("Cancel")
 
-      fill_in "Name", with: "Matt"
-      fill_in "Phone Number", with: "2223334444"
+      within('.web') do
+        fill_in "Name", with: "Matt"
+        fill_in "Phone Number", with: "2223334444"
 
-      click_on 'Submit'
+        click_on 'Submit'
+      end
 
       expect(current_path).to eq(settings_path)
 
@@ -51,20 +51,19 @@ RSpec.feature 'User can add their own phone number' do
       expect(current_user.name).to eq('Matt')
       expect(current_user.phone).to eq('3334445555')
 
-      click_on 'My Number'
+      visit edit_user_path(current_user)
 
-      expect(current_path).to eq(edit_user_path(current_user))
+      within('.web') do
+        expect(page).to have_content("My Number")
+        expect(page).to have_field('Name')
+        expect(page).to have_field('Phone Number')
+        expect(page).to have_button("Submit")
+        expect(page).to have_link("Cancel")
+        fill_in "Name", with: nil
+        fill_in "Phone Number", with: "2223334444"
 
-      expect(page).to have_content("My Number")
-      expect(page).to have_field('Name')
-      expect(page).to have_field('Phone Number')
-      expect(page).to have_button("Submit")
-      expect(page).to have_link("Cancel")
-
-      fill_in "Name", with: nil
-      fill_in "Phone Number", with: "2223334444"
-
-      click_on 'Submit'
+        click_on 'Submit'
+      end
 
       expect(page).to have_content("My Number")
       expect(page).to have_field('Name')

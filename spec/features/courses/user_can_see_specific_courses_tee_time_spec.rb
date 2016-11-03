@@ -7,7 +7,7 @@ RSpec.feature 'User can view specific tee time for specific courses' do
     visit '/'
 
     click_on "Log in with Google"
-    
+
     create_three_players
 
     visit '/courses/5/tee_times'
@@ -40,7 +40,7 @@ RSpec.feature 'User can view specific tee time for specific courses' do
       expect(page).to have_content("Tue Nov 01")
       expect(page).to have_content("4")
       expect(page).to have_content("$27.00")
-      expect(page).to have_button("Confirm Booking")
+      expect(page).to have_button("Confirm")
     end
   end
 end

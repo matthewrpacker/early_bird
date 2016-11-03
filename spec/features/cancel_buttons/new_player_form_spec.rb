@@ -10,11 +10,15 @@ RSpec.feature 'User can use cancel button on new player form' do
 
     visit settings_path
 
-    click_on "Add Player"
+    within('.web .player-table') do
+      click_on "Add Player"
+    end
 
     expect(current_path).to eq(new_player_path)
 
-    click_on "Cancel"
+    within('.web') do
+      click_on "Cancel"
+    end
 
     expect(current_path).to eq(settings_path)
   end

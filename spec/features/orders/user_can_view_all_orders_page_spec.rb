@@ -7,10 +7,9 @@ RSpec.feature 'User can view all orders' do
     visit '/'
 
     click_on "Log in with Google"
-    click_on "Settings"
-    click_on "View Orders"
 
-    expect(current_path).to eq(orders_path)
+    visit orders_path
+
     expect(page).to have_content("Order Number")
     expect(page).to have_content("Date Placed")
     expect(page).to have_content("Course Name")
