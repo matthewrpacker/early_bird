@@ -9,13 +9,14 @@ EarlyBird is my final personal project for Module 3 at Turing School of Software
 ### Details
 EarlyBird is a golf tee time booking system. All course information (tee times, images, addresses, etc.) displayed on the EarlyBird app is consumed from my Golf Courses API.
 
+![App Demo](http://recordit.co/UJpdXt4mVa.gif)
+
 ### Project Links
-[EarlyBird Github URL](https://github.com/dtinianow/rails_engine)
+[EarlyBird Github URL](https://github.com/matthewrpacker/early_bird)
 
 [EarlyBird Heroku URL](https://early-bird-golf.herokuapp.com/)
 
-[Golf Courses API Github URL](https://github.com/dtinianow/rails_engine)
-[Golf Courses API Heroku URL](https://early-bird-golf.herokuapp.com)
+[Golf Courses API Github URL](https://github.com/matthewrpacker/golf_courses_api)
 
 [Personal Project Spec](https://github.com/turingschool/lesson_plans/blob/master/ruby_03-professional_rails_applications/self_directed_project.md)
 
