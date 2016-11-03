@@ -10,7 +10,7 @@ RSpec.feature 'User can go back to course show from course tee times index' do
 
     visit '/courses/1'
 
-    within('.course') do
+    within('.web-tee-time-btn') do
       click_on 'Tee Times'
     end
 

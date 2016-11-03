@@ -7,20 +7,19 @@ RSpec.feature 'User can create player' do
 
       visit '/'
 
-
       click_on "Log in with Google"
       click_on "Settings"
 
       expect(current_path).to eq(settings_path)
 
-      click_on "Add Player"
+      visit new_player_path
 
-      expect(current_path).to eq(new_player_path)
+      within('.web') do
+        fill_in "Name", with: "Golfer 1"
+        fill_in "Phone Number", with: "3032222222"
 
-      fill_in "Name", with: "Golfer 1"
-      fill_in "Phone Number", with: "3032222222"
-
-      click_on "Submit"
+        click_on "Submit"
+      end
 
       expect(current_path).to eq(settings_path)
       expect(page).to have_content("Golfer 1")
@@ -32,20 +31,19 @@ RSpec.feature 'User can create player' do
 
       visit '/'
 
-
       click_on "Log in with Google"
       click_on "Settings"
 
       expect(current_path).to eq(settings_path)
 
-      click_on "Add Player"
+      visit new_player_path
 
-      expect(current_path).to eq(new_player_path)
+      within('.web') do
+        fill_in "Name", with: "Golfer 1"
+        fill_in "Phone Number", with: nil
 
-      fill_in "Name", with: "Golfer 1"
-      fill_in "Phone Number", with: nil
-
-      click_on "Submit"
+        click_on "Submit"
+      end
 
       expect(page).to have_content("Add a Player")
       expect(page).to have_field('Name')

@@ -10,10 +10,10 @@ RSpec.feature 'User can view all tee times for specific course' do
 
     visit 'courses/12'
 
-    within('.course') do
+    within('.web-tee-time-btn') do
       click_on "Tee Times"
     end
-    
+
     expect(current_path).to eq('/courses/12/tee_times')
     expect(page).to have_link('Spring Hill')
     expect(page).to have_content('800 N. Telluride St.')

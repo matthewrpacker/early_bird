@@ -9,7 +9,7 @@ RSpec.feature 'User can log in' do
 
     click_on "Log in with Google"
 
-    expect(current_path).to eq(settings_path)
+    expect(current_path).to eq(root_path)
     expect(page).to have_content("Welcome, Matt")
     expect(page).to have_content("Settings")
     expect(page).to have_content("Log out")
