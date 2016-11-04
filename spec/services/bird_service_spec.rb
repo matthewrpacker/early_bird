@@ -50,7 +50,7 @@ describe BirdService do
         expect(first_tee_time['tee_off_at']).to eq('2016-11-01T07:00:00.000Z')
         expect(first_tee_time['unit_price']).to eq('27.0')
         expect(first_tee_time['course_id']).to eq(9)
-        expect(first_tee_time['quantity']).to eq(4)
+        expect(first_tee_time['quantity']).to eq(2)
       end
     end
   end
